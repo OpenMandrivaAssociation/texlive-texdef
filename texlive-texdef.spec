@@ -1,18 +1,19 @@
-# revision 23260
+# revision 26176
 # category Package
 # catalog-ctan /support/texdef
-# catalog-date 2011-07-28 17:04:19 +0200
+# catalog-date 2012-05-02 21:24:33 +0200
 # catalog-license gpl3
-# catalog-version 1.4
+# catalog-version 1.6
 Name:		texlive-texdef
-Version:	1.4
-Release:	2
+Version:	1.6
+Release:	1
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/texdef
 License:	GPL3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.doc.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -51,10 +52,13 @@ over the script name: latexdef will use LaTeX as default, etc.
 %{_texmfdistdir}/scripts/texdef/texdef.pl
 %doc %{_texmfdistdir}/doc/support/texdef/INSTALL
 %doc %{_texmfdistdir}/doc/support/texdef/README
+%doc %{_texmfdistdir}/doc/support/texdef/texdef.pdf
+#- source
+%doc %{_texmfdistdir}/source/support/texdef/texdef.tex
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%setup -c -a0 -a1 -a2
 
 %build
 
