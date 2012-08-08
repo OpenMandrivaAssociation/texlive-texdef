@@ -1,11 +1,11 @@
-# revision 26176
+# revision 26420
 # category Package
 # catalog-ctan /support/texdef
-# catalog-date 2012-05-02 21:24:33 +0200
+# catalog-date 2012-05-15 15:44:48 +0200
 # catalog-license gpl3
-# catalog-version 1.6
+# catalog-version 1.7b
 Name:		texlive-texdef
-Version:	1.6
+Version:	1.7b
 Release:	1
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
