@@ -5,7 +5,7 @@
 # catalog-license gpl3
 # catalog-version 1.7b
 Name:		texlive-texdef
-Version:	1.7c
+Version:	1.8a
 Release:	1
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
