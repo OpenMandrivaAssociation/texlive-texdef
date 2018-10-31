@@ -6,7 +6,7 @@
 # catalog-version 1.7b
 Name:		texlive-texdef
 Version:	1.8a
-Release:	1
+Release:	2
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/texdef
