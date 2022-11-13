@@ -1,19 +1,13 @@
-# revision 26420
-# category Package
-# catalog-ctan /support/texdef
-# catalog-date 2012-05-15 15:44:48 +0200
-# catalog-license gpl3
-# catalog-version 1.7b
 Name:		texlive-texdef
-Version:	1.8a
-Release:	2
+Version:	64967
+Release:	1
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/texdef
 License:	GPL3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -39,54 +33,32 @@ The flavour can be selected using an command line option or
 over the script name: latexdef will use LaTeX as default, etc.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
 %{_bindir}/texdef
-%{_texmfdistdir}/scripts/texdef/texdef.pl
-%doc %{_texmfdistdir}/doc/support/texdef/INSTALL
-%doc %{_texmfdistdir}/doc/support/texdef/README
-%doc %{_texmfdistdir}/doc/support/texdef/texdef.pdf
+%{_texmfdistdir}/scripts/texdef
+%doc %{_texmfdistdir}/doc/support/texdef
 #- source
-%doc %{_texmfdistdir}/source/support/texdef/texdef.tex
+%doc %{_texmfdistdir}/source/support/texdef
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/texdef/texdef.pl texdef
+ln -sf %{_texmfdistdir}/scripts/texdef/texdef.pl texdef
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-
-
-%changelog
-* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.7b-1
-+ Revision: 812893
-- Update to latest release.
-
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.6-1
-+ Revision: 805104
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.4-2
-+ Revision: 756601
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.4-1
-+ Revision: 719679
-- texlive-texdef
-- texlive-texdef
-- texlive-texdef
-
