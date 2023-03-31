@@ -1,6 +1,6 @@
 Name:		texlive-texdef
 Version:	64967
-Release:	1
+Release:	2
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/texdef
