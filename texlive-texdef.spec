@@ -3,7 +3,7 @@ Version:	64967
 Release:	2
 Summary:	Display the definitions of TeX commands
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/texdef
+URL:		https://www.ctan.org/tex-archive/support/texdef
 License:	GPL3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/texdef.doc.r%{version}.tar.xz
